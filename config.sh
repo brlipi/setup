@@ -69,8 +69,7 @@ chmod 600 ~/.ssh/config
 sudo usermod -a -G wireshark ${USER}
 
 # Setup docker
-sudo systemctl start docker
-sudo systemctl enable docker
+sudo systemctl enable --now docker
 
 # Run without sudo
 sudo groupadd docker
