@@ -16,7 +16,8 @@ touch ~/.config/lesskey
 touch ~/.local/state/lesshst
 
 # Wget
-sudo cp /etc/wgetrc ~/.config/wgetrc
+# Default wgetrc missing on Fedora
+#sudo cp /etc/wgetrc ~/.config/wgetrc
 
 # Inputrc
 mkdir ~/.config/readline
