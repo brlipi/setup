@@ -1,0 +1,23 @@
+#!/bin/bash
+
+configure_dnf() {
+    sudo echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
+    sudo echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
+}
+
+enable_rpm_fusion() {
+    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+}
+
+main() {
+    configure_dnf
+    enable_rpm_fusion
+
+    if [[ $(systemd-detect-virt) != 'wsl' ]]; then
+        ./wsl_fedora_install.sh
+    else
+        ./fedora_install.sh
+    fi
+}
+
+main
