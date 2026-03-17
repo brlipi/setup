@@ -18,7 +18,7 @@ main() {
     enable_rpm_fusion
     add_docker_repo
 
-    if [[ $(systemd-detect-virt) != 'wsl' ]]; then
+    if [[ $(systemd-detect-virt) == 'wsl' ]]; then
         ./wsl_fedora_install.sh
     else
         ./fedora_install.sh
