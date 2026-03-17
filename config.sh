@@ -35,7 +35,7 @@ EOF
 touch ~/.config/gitconfig
 
 # Directory-specific gitconfigs
-cat ~/.config/gitconfig <<EOF
+cat > ~/.config/gitconfig <<EOF
 [user]
 	email =
 	name =
@@ -47,12 +47,12 @@ cat ~/.config/gitconfig <<EOF
 EOF
 
 mkdir -p ~/git/{personal,work}
-cat ~/git/personal/.gitconfig_include_personal <<EOF
+cat > ~/git/personal/.gitconfig_include_personal <<EOF
 [user]
 	email =
 	name =
 EOF
-cat ~/git/work/.gitconfig_include_work <<EOF
+cat > ~/git/work/.gitconfig_include_work <<EOF
 [user]
 	email =
 	name =
