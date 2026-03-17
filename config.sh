@@ -2,7 +2,7 @@
 
 ## Configuring tools to use XDG Base Directory
 # Tmux dir
-mkdir ~/.config/tmux
+mkdir -p ~/.config/tmux
 git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
 
 # Zsh dirs
