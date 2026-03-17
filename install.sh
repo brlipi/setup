@@ -9,9 +9,14 @@ enable_rpm_fusion() {
     sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 }
 
+add_docker_repo() {
+    sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+}
+
 main() {
     configure_dnf
     enable_rpm_fusion
+    add_docker_repo
 
     if [[ $(systemd-detect-virt) != 'wsl' ]]; then
         ./wsl_fedora_install.sh
