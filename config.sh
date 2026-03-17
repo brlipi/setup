@@ -27,7 +27,7 @@ tee -a ~/.bashrc >/dev/null <<EOF
 if [ ! -a ~/.config/inputrc ]; then
 	echo '\$include /etc/inputrc' > ~/.config/inputrc;
 	echo 'set completion-ignore-case On' >> ~/.config/inputrc
-	echo 'stty -ixon' >> ~.config/inputrc
+	echo 'stty -ixon' >> ~/.config/inputrc
 fi
 EOF
 
