@@ -23,7 +23,7 @@ install_tops() {
 }
 
 install_wireshark() {
-    sudo dnf install -y wireshark
+    dnf_install+=("wireshark")
 }
 
 install_and_setup_docker() {
