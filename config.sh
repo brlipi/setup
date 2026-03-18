@@ -33,7 +33,8 @@ fi
 EOF
 
 # Gitconfig
-touch ~/.config/gitconfig
+mkdir -p ~/.config/git
+touch ~/.config/git/config
 
 # Directory-specific gitconfigs
 cat > ~/.config/gitconfig <<EOF
