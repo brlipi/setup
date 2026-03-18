@@ -81,7 +81,7 @@ exec sg docker newgrp
 # Docker autocompletion
 # By default comes in /usr/share/zsh/vendor-completions/_docker so copying it is also a valid option
 # But docker compose completion won't work.
-if [ -e /usr/share/zsh/site-functions/_docker ]; then
+if [ -n /usr/share/zsh/site-functions/_docker ]; then
     # Needs sudo bash -c so redirection is also run as root
     sudo bash -c 'docker completion zsh > /usr/share/zsh/site-functions/_docker'
 fi
@@ -92,7 +92,7 @@ sudo ln -s /usr/sbin/nvim /usr/sbin/vim
 sudo ln -s /usr/sbin/nvim /usr/sbin/vi
 
 # Set share dir (WSL only)
-if [[ $(systemd-detect-virt) != 'wsl' ]]; then
+if [[ $(systemd-detect-virt) == 'wsl' ]]; then
     winusername=powershell.exe '$env:UserName'
     ln -s /mnt/c/Users/$winusername/Downloads/share /home/$USER/share
 fi
