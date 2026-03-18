@@ -1,5 +1,9 @@
 #!/bin/bash
 
+update_existing_packages() {
+    sudo dnf update -y
+}
+
 configure_dnf() {
     sudo echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
     sudo echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
@@ -14,6 +18,7 @@ add_docker_repo() {
 }
 
 main() {
+    update_existing_packages
     configure_dnf
     enable_rpm_fusion
     add_docker_repo
