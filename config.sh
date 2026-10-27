@@ -79,9 +79,9 @@ sudo usermod -aG docker "$USER"
 # Docker autocompletion
 # By default comes in /usr/share/zsh/vendor-completions/_docker so copying it is also a valid option
 # But docker compose completion won't work.
-if [ -n /usr/share/zsh/site-functions/_docker ]; then
-    # Needs sudo bash -c so redirection is also run as root
-    sudo bash -c 'docker completion zsh > /usr/share/zsh/site-functions/_docker'
+if [ -e /usr/share/zsh/site-functions/_docker ]; then
+	# Needs sudo bash -c so redirection is also run as root
+	sudo bash -c 'docker completion zsh > /usr/share/zsh/site-functions/_docker'
 fi
 
 # Remove vim and set set nvim as vi[m]
