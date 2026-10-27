@@ -51,9 +51,8 @@ install_fnm_and_lts_node() {
     # Yarn and TS as global packages
     # npm i -g npm updates the package manager
     # Also add fnm completions for zsh
-    source /home/$USER/.bashrc && bash -c 'fnm install --lts ; npm i -g npm yarn typescript ; fnm completions --shell zsh | sudo tee -a /usr/share/zsh/site-functions/_fnm >/dev/null'
+    source "/home/$USER/.bashrc" && bash -c 'fnm install --lts ; npm i -g npm yarn typescript ; fnm completions --shell zsh | sudo tee -a /usr/share/zsh/site-functions/_fnm >/dev/null'
 }
-
 
 main() {
     set_all_dnf_packages
