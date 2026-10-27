@@ -27,7 +27,8 @@ install_wireshark() {
 }
 
 install_docker() {
-    dnf_install+=("docker-ce" "docker-ce-cli" "containerd.io" "docker-buildx-plugin" "docker-compose-plugin")
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    dnf_install+=("docker-ce" "docker-ce-cli" "containerd.io" "docker-compose-plugin")
 }
 
 install_essentials() {
