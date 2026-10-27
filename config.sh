@@ -3,7 +3,7 @@
 ## Configuring tools to use XDG Base Directory
 # Tmux dir
 mkdir -p ~/.config/tmux
-git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
 
 # Zsh dirs
 mkdir -p ~/.cache/zsh/zcompcache
@@ -37,7 +37,7 @@ mkdir -p ~/.config/git
 touch ~/.config/git/config
 
 # Directory-specific gitconfigs
-cat > ~/.config/gitconfig <<EOF
+cat >~/.config/git/config <<EOF
 [user]
 	email =
 	name =
@@ -49,12 +49,12 @@ cat > ~/.config/gitconfig <<EOF
 EOF
 
 mkdir -p ~/git/{personal,work}
-cat > ~/git/personal/.gitconfig_include_personal <<EOF
+cat >~/git/personal/.gitconfig_include_personal <<EOF
 [user]
 	email =
 	name =
 EOF
-cat > ~/git/work/.gitconfig_include_work <<EOF
+cat >~/git/work/.gitconfig_include_work <<EOF
 [user]
 	email =
 	name =
