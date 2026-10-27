@@ -84,11 +84,6 @@ if [ -e /usr/share/zsh/site-functions/_docker ]; then
 	sudo bash -c 'docker completion zsh > /usr/share/zsh/site-functions/_docker'
 fi
 
-# Remove vim and set set nvim as vi[m]
-sudo dnf remove -y vim-minimal
-sudo ln -s /usr/sbin/nvim /usr/sbin/vim
-sudo ln -s /usr/sbin/nvim /usr/sbin/vi
-
 # Set share dir (WSL only)
 if [[ $(systemd-detect-virt) == 'wsl' ]]; then
     winusername=powershell.exe '$env:UserName'
