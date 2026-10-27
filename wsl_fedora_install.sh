@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dnf_install=(sudo dnf install -y)
+dnf_install=("sudo dnf install -y --skip-unavailable ")
 
 install_core_dnf_plugins() {
     dnf_install+=("dnf-plugins-core")
