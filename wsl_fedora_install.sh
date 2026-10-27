@@ -32,7 +32,7 @@ install_docker() {
 }
 
 install_essentials() {
-    dnf_install+=("curl" "git" "neovim" "zsh" "luarocks" "ripgrep" "fzf" "gnupg2" "gawk" "fastfetch" "tmux" "fd-find" "zsh-autosuggestions" "zsh-syntax-highlighting" "oathtool" "sshpass")
+    dnf_install+=("curl" "git" "neovim" "zsh" "luarocks" "ripgrep" "fzf" "gnupg2" "gawk" "fastfetch" "tmux" "fd-find" "zsh-autosuggestions" "zsh-syntax-highlighting")
 }
 
 set_all_dnf_packages() {
