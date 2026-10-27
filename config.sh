@@ -68,17 +68,14 @@ cp ./ssh/ssh_config_template ~/.ssh/config
 chmod 600 ~/.ssh/config
 
 # Add user to wireshark group
-sudo usermod -a -G wireshark ${USER}
+sudo usermod -aG wireshark "$USER"
 
 # Setup docker
 sudo systemctl enable --now docker
 
 # Run without sudo
 sudo groupadd docker
-sudo usermod -aG docker $USER
-# Should have the same effect as logging back in
-# https://stackoverflow.com/a/76889494
-exec sg docker newgrp
+sudo usermod -aG docker "$USER"
 # Docker autocompletion
 # By default comes in /usr/share/zsh/vendor-completions/_docker so copying it is also a valid option
 # But docker compose completion won't work.
