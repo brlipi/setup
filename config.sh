@@ -86,6 +86,6 @@ fi
 
 # Set share dir (WSL only)
 if [[ $(systemd-detect-virt) == 'wsl' ]]; then
-    winusername=powershell.exe '$env:UserName'
-    ln -s /mnt/c/Users/$winusername/Downloads/share /home/$USER/share
+	winusername=$(powershell.exe '$env:UserName')
+	ln -s "/mnt/c/Users/$winusername/Downloads/share" "/home/$USER/share"
 fi
